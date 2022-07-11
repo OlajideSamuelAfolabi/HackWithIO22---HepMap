@@ -27,14 +27,19 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  auth_repository:
+    path: packages/auth_repository
+  bloc: ^8.0.3
   cupertino_icons: ^1.0.2
   equatable: ^2.0.3
   firebase_auth: ^3.4.1
   firebase_core: ^1.19.1
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.0.1
   formz: ^0.4.1
   google_sign_in: ^5.4.0
+  meta: ^1.7.0
   very_good_analysis: ^3.0.1
 
 dev_dependencies:
