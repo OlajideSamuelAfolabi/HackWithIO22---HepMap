@@ -1,0 +1,8 @@
+name: cache
+description:  A Dart package for for in memory cache.
+
+environment:
+  sdk:  ">=2.16.0 <3.0.0"
+  
+dev_dependencies:
+  very_good_analysis: ^3.0.1
