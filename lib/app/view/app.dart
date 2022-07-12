@@ -2,6 +2,7 @@ import 'package:auth_repository/auth_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hack_with_io/app/bloc/app_bloc.dart';
+import 'package:hack_with_io/onboarding/views/splash_screen.dart';
 
 class App extends StatelessWidget {
   const App({Key? key, required AuthRepository authRepository})
@@ -16,7 +17,7 @@ class App extends StatelessWidget {
       value: _authRepository,
       child: BlocProvider(
         create: (_) => AppBloc(authRepository: _authRepository),
-        child: const AppView(),
+        child: const SplashScreen(),
       ),
     );
   }

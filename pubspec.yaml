@@ -35,13 +35,14 @@ dependencies:
   equatable: ^2.0.3
   firebase_auth: ^3.4.1
   firebase_core: ^1.19.1
+  firebase_storage: ^10.3.1
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
-  input_validator:
-    path: packages/input_validator
   formz: ^0.4.1
   google_sign_in: ^5.4.0
+  input_validator:
+    path: packages/input_validator
   meta: ^1.7.0
   post_repository:
     path: packages/post_repository
