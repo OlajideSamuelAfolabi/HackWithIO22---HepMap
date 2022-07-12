@@ -46,6 +46,7 @@ dependencies:
   meta: ^1.7.0
   post_repository:
     path: packages/post_repository
+  shared_preferences: ^2.0.15
   uuid: ^3.0.6
   very_good_analysis: ^3.0.1
 
