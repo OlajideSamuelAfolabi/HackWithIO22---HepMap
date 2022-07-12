@@ -1,5 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
-import 'package:posts_repository/post_repository.dart';
+
+import '../entities/entities.dart';
 
 class Post extends Equatable {
   final String description;
@@ -7,7 +9,7 @@ class Post extends Equatable {
   final String author;
   final int? numberOfLikes;
   final int? numberOfComments;
-  final String timestamp;
+  final Timestamp timestamp;
 
   Post(
     this.description, {
@@ -26,7 +28,7 @@ class Post extends Equatable {
     required String author,
     int? numberOfLikes,
     int? numberOfComments,
-    required String timestamp,
+    required Timestamp timestamp,
   }) {
     return Post(
       description,

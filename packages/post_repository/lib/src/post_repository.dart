@@ -7,5 +7,7 @@ abstract class PostRepository {
 
   Future<void> updatePost(Post update);
 
-  Stream<List<Post>> posts();
+  Stream<List<Post>> getPosts();
+
+  // Future<Post> getPostById();
 }

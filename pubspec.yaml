@@ -38,6 +38,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
+  input_validator:
+    path: packages/input_validator
   formz: ^0.4.1
   google_sign_in: ^5.4.0
   meta: ^1.7.0

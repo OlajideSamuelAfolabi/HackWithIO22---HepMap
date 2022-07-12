@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class PostEntity extends Equatable {
   final String description;
@@ -7,7 +8,7 @@ class PostEntity extends Equatable {
   final String author;
   final int? numberOfLikes;
   final int? numberOfComments;
-  final String timestamp;
+  final Timestamp timestamp;
 
   PostEntity(
     this.description,
@@ -41,7 +42,7 @@ class PostEntity extends Equatable {
       json['author'] as String,
       json['numberOfLikes'] as int,
       json['numberOfComments'] as int,
-      json['timestamp'] as String,
+      json['timestamp'] as Timestamp,
     );
   }
 
@@ -59,10 +60,10 @@ class PostEntity extends Equatable {
   Map<String, Object> toDocument() {
     return {
       'description': description,
-      'author': author,
+      'author': FirebaseAuth.instance.currentUser!.uid,
       'number_of_likes': numberOfLikes!,
       'number_of_comments': numberOfComments!,
-      'timestamp': timestamp,
+      'timestamp': FieldValue.serverTimestamp(),
     };
   }
 

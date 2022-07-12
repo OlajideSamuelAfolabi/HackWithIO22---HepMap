@@ -233,6 +233,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.1"
+  input_validator:
+    dependency: "direct main"
+    description:
+      path: "packages/input_validator"
+      relative: true
+    source: path
+    version: "0.0.0"
   intl:
     dependency: transitive
     description:

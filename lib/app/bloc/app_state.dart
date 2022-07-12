@@ -9,9 +9,9 @@ enum AppStatus {
   unauthenticated,
 }
 
-/// The default app status is unathenticated and we will have an empty user
+/// The default app status is `unathenticated` and we will have an empty user
 /// in that state until, we have a useer login so that we have our app state
-/// to be authenticated
+/// to be `authenticated`
 ///
 /// {@macro AppState}
 class AppState extends Equatable {

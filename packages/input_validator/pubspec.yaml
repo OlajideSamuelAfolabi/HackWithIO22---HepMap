@@ -1,0 +1,8 @@
+name: input_validator
+description:  A simple helper package for form input validation.
+
+environment:
+  sdk: ">=2.16.0 <3.0.0"
+
+dependencies:
+  formz: ^0.4.1

@@ -1,4 +1,4 @@
-import 'package:posts_repository/post_repository.dart';
+import 'package:post_repository/post_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FirebasePostRepository implements PostRepository {
@@ -14,7 +14,7 @@ class FirebasePostRepository implements PostRepository {
   }
 
   @override
-  Stream<List<Post>> posts() {
+  Stream<List<Post>> getPosts() {
     return postsCollection.snapshots().map((snapshot) {
       return snapshot.docs
           .map((doc) => Post.fromEntity(PostEntity.fromSnapshot(doc)))
