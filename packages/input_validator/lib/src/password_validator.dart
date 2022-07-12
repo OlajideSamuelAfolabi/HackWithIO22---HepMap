@@ -1,9 +1,10 @@
-import 'package:form_inputs/src/enums.dart';
 import 'package:formz/formz.dart';
 
+import 'enums.dart';
+
 class Password extends FormzInput<String, PasswordValidationError> {
-  Password.dirty([String value = '']) : super.dirty(value);
-  Password.pure() : super.dirty('');
+  const Password.pure() : super.pure('');
+  const Password.dirty([String value = '']) : super.dirty(value);
 
   static final RegExp _passwordRegExp = RegExp(
     r'^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$',
