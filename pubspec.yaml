@@ -30,6 +30,7 @@ dependencies:
   auth_repository:
     path: packages/auth_repository
   bloc: ^8.0.3
+  cloud_firestore: ^3.2.1
   cupertino_icons: ^1.0.2
   equatable: ^2.0.3
   firebase_auth: ^3.4.1
@@ -40,6 +41,9 @@ dependencies:
   formz: ^0.4.1
   google_sign_in: ^5.4.0
   meta: ^1.7.0
+  post_repository:
+    path: packages/post_repository
+  uuid: ^3.0.6
   very_good_analysis: ^3.0.1
 
 dev_dependencies:
