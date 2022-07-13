@@ -7,9 +7,10 @@ class Post extends Equatable {
   final String description;
   final String id;
   final String author;
-  final int? numberOfLikes;
+  int? numberOfLikes;
   final int? numberOfComments;
   final Timestamp timestamp;
+  DocumentReference? ref;
 
   Post(
     this.description, {
@@ -18,13 +19,14 @@ class Post extends Equatable {
     int? numberOfLikes,
     int? numberOfComments,
     required this.timestamp,
+    this.ref,
   })  : this.id = id,
         this.numberOfLikes = numberOfLikes ?? 0,
         this.numberOfComments = numberOfComments ?? 0;
 
   Post copyWith({
     required String description,
-    required String id,
+    String? id,
     required String author,
     int? numberOfLikes,
     int? numberOfComments,
@@ -32,7 +34,7 @@ class Post extends Equatable {
   }) {
     return Post(
       description,
-      id: id,
+      id: id ?? this.id,
       author: author,
       timestamp: timestamp,
       numberOfComments: numberOfComments ?? this.numberOfComments,
@@ -47,6 +49,7 @@ class Post extends Equatable {
         numberOfLikes,
         numberOfComments,
         timestamp,
+        ref,
       );
   static Post fromEntity(PostEntity entity) {
     return Post(

@@ -9,6 +9,7 @@ class PostEntity extends Equatable {
   final int? numberOfLikes;
   final int? numberOfComments;
   final Timestamp timestamp;
+  DocumentReference? ref;
 
   PostEntity(
     this.description,
@@ -17,6 +18,7 @@ class PostEntity extends Equatable {
     this.numberOfLikes,
     this.numberOfComments,
     this.timestamp,
+    this.ref,
   );
 
   Map<String, Object> toJson() {
@@ -43,18 +45,13 @@ class PostEntity extends Equatable {
       json['numberOfLikes'] as int,
       json['numberOfComments'] as int,
       json['timestamp'] as Timestamp,
+      json['ref'] as DocumentReference,
     );
   }
 
   static PostEntity fromSnapshot(DocumentSnapshot snap) {
-    return PostEntity(
-      snap.get('description'),
-      snap.id,
-      snap.get('author'),
-      snap.get('number_of_likes'),
-      snap.get('number_of_comments'),
-      snap.get('timestamp'),
-    );
+    final postEntity = PostEntity.fromJson(snap.data() as Map<String, Object>);
+    return postEntity;
   }
 
   Map<String, Object> toDocument() {
