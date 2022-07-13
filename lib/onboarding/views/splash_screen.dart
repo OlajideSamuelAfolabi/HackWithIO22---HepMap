@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
             return showOnbarding
                 ? const HomeView()
                 : const Center(
-                    child: Text('hello'),
+                    child: Text('hi'),
                   );
           },
         ),
