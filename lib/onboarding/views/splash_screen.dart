@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hack_with_io/app/utils/utils.dart';
 import 'package:hack_with_io/home/views/home_view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -40,6 +41,33 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Container(
+          width: double.infinity,
+          color: AppColors.kBlueColor,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "HepMap",
+                style: kLogoTextStyle.copyWith(
+                  color: AppColors.kwhiteColor,
+                ),
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              Text(
+                "You don't want to go",
+                style: kTaglineTextStyle.copyWith(
+                  color: AppColors.kwhiteColor,
+                ),
+              ),
+              Text("through this alone.",
+                  style:
+                      kTaglineTextStyle.copyWith(color: AppColors.kwhiteColor)),
+            ],
+          )),
+    );
   }
 }

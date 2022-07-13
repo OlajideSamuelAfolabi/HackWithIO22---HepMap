@@ -30,16 +30,16 @@ class PostBloc extends Bloc<PostEvent, PostState> {
     }
   }
 
-  FutureOr<void> _onAddPost(AddPost event, Emitter<PostState> emit) {
+  FutureOr<void> _onAddPost(AddPost event, Emitter<PostState> emit) async {
     final state = this.state;
 
     if (state is PostsLoaded) {
-      _postRepository.createNewPost(event.post);
       emit(
         PostsLoaded(
           posts: List.from(state.posts)..add(event.post),
         ),
       );
+      await _postRepository.createNewPost(event.post);
     }
   }
 
