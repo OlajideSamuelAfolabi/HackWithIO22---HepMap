@@ -5,65 +5,67 @@ class User extends Equatable {
     required this.id,
     required this.username,
     required this.email,
-    this.imageUrl,
-    this.userId,
-    this.key,
-    this.dateOfBirth,
-    this.bio,
-    this.location,
-    this.isMedicalProfessional = false,
-    this.contact,
+    required this.imageUrl,
   });
 
   final String id;
   final String username;
   final String email;
-  final String? imageUrl;
-  final String? userId;
-  final String? key;
-  final String? dateOfBirth;
-  final String? bio;
-  final String? location;
-  final String? contact;
-  final bool isMedicalProfessional;
+  final String imageUrl;
 
-  User copyWith({
-    String? userName,
-    String? email,
-    String? dateOfBirth,
-    String? bio,
-    String? location,
-    String? contact,
-  }) {
+  factory User.fromJson(Map<String, dynamic> json) {
     return User(
-      id: this.id,
-      username: userName ?? username,
-      email: email ?? this.email,
-      userId: userId,
-      key: key,
-      bio: bio ?? this.bio,
-      dateOfBirth: dateOfBirth ?? this.dateOfBirth,
-      location: location ?? this.location,
-      contact: contact ?? this.contact,
+      id: json['id'] ?? '',
+      username: json['username'] ?? '',
+      email: json['email'] ?? '',
+      imageUrl: json['imageUrl'] ?? '',
     );
   }
 
-  static const empty = User(id: '', username: '', email: '');
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'id': id,
+      'username': username,
+      'email': email,
+      'imageUrl': imageUrl,
+    };
+  }
 
-  bool get isEmpty => this == User.empty;
+  factory User.empty() {
+    return User(
+      id: '',
+      username: '',
+      email: '',
+      imageUrl: '',
+    );
+  }
 
-  bool get isNotEmpty => this != User.empty;
+  // User copyWith({
+  //   String? userName,
+  //   String? email,
+  //   String? dateOfBirth,
+  //   String? bio,
+  //   String? location,
+  //   String? contact,
+  // }) {
+  //   return User(
+  //     id: this.id,
+  //     username: userName ?? username,
+  //     email: email ?? this.email,
+  //     userId: userId,
+  //     key: key,
+  //     bio: bio ?? this.bio,
+  //     dateOfBirth: dateOfBirth ?? this.dateOfBirth,
+  //     location: location ?? this.location,
+  //     contact: contact ?? this.contact,
+  //   );
+  // }
 
   @override
   List<Object?> get props => [
         username,
-        userId,
+        id,
         email,
-        key,
-        dateOfBirth,
         imageUrl,
-        bio,
-        location,
-        contact,
       ];
 }
