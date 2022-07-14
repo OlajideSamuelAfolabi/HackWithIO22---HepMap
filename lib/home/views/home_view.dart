@@ -32,7 +32,8 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[_selectedIndex],
+      body: pages[1],
+      // pages[_selectedIndex],
       floatingActionButton: FloatingActionButton.small(
         backgroundColor: AppColors.kBlueColor,
         onPressed: () {},
