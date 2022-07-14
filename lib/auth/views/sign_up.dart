@@ -22,6 +22,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 style: kHeadersTextStyle.copyWith(color: AppColors.kBlackColor),
               ),
             ),
+            //TODO Decorate all Text Fields Widgets
             const TextField(),
             const TextField(),
             const TextField(),
