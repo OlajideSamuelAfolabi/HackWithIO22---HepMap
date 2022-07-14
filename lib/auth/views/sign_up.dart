@@ -14,84 +14,111 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Center(
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 100.0),
-                child: Text(
-                  "Sign Up",
-                  style:
-                      kHeadersTextStyle.copyWith(color: AppColors.kBlackColor),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 20.0),
+          child: Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 70.0),
+                  child: Text(
+                    "Sign Up",
+                    textAlign: TextAlign.center,
+                    style: kHeadersTextStyle.copyWith(
+                        color: AppColors.kBlackColor),
+                  ),
                 ),
-              ),
-              const SizedBox(height: 40),
-              Padding(
-                padding: const EdgeInsets.all(30.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Email',
-                    labelStyle: kInfoTextStyle,
-                    suffixIcon: SvgPicture.asset(
-                      'assets/email.svg',
-                      fit: BoxFit.scaleDown,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15.0),
+                const SizedBox(height: 40),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10.0),
+                  child: Text(
+                    'Email',
+                    style: kTextBoxLabelTextStyle.copyWith(
+                        color: AppColors.kBlackColor),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 15.0),
+                  child: TextField(
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: InputDecoration(
+                      labelText: 'Email',
+                      labelStyle: kInfoTextStyle,
+                      suffixIcon: SvgPicture.asset(
+                        'assets/email.svg',
+                        fit: BoxFit.scaleDown,
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15.0),
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                    left: 30.0, right: 30.0, top: 10, bottom: 30),
-                child: TextField(
-                  obscureText: true,
-                  obscuringCharacter: '*',
-                  decoration: InputDecoration(
-                    labelText: 'Password',
-                    labelStyle: kInfoTextStyle,
-                    suffixIcon: SvgPicture.asset(
-                      'assets/password.svg',
-                      fit: BoxFit.scaleDown,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15.0),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10.0),
+                  child: Text(
+                    'Password',
+                    style: kTextBoxLabelTextStyle.copyWith(
+                        color: AppColors.kBlackColor),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 15.0),
+                  child: TextField(
+                    obscureText: true,
+                    obscuringCharacter: '*',
+                    decoration: InputDecoration(
+                      labelText: 'Password',
+                      labelStyle: kInfoTextStyle,
+                      suffixIcon: SvgPicture.asset(
+                        'assets/password.svg',
+                        fit: BoxFit.scaleDown,
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15.0),
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.only(left: 30.0, right: 30.0, top: 10),
-                child: TextField(
-                  obscureText: true,
-                  obscuringCharacter: "*",
-                  decoration: InputDecoration(
-                    labelText: 'Confirm Pasword',
-                    labelStyle: kInfoTextStyle,
-                    suffixIcon: SvgPicture.asset(
-                      'assets/password.svg',
-                      fit: BoxFit.scaleDown,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(13.0),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10.0),
+                  child: Text(
+                    'Confirm Password',
+                    style: kTextBoxLabelTextStyle.copyWith(
+                        color: AppColors.kBlackColor),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 15.0),
+                  child: TextField(
+                    obscureText: true,
+                    obscuringCharacter: "*",
+                    decoration: InputDecoration(
+                      labelText: 'Confirm Pasword',
+                      labelStyle: kInfoTextStyle,
+                      suffixIcon: SvgPicture.asset(
+                        'assets/password.svg',
+                        fit: BoxFit.scaleDown,
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(13.0),
+                      ),
                     ),
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Container(
-                height: 45,
-                padding: const EdgeInsets.only(left: 35, right: 35),
-                width: double.infinity,
-                child: RawMaterialButton(
+                const SizedBox(
+                  height: 20,
+                ),
+                RawMaterialButton(
                   onPressed: () {},
                   fillColor: AppColors.kBlueColor,
                   shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(15))),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(15),
+                    ),
+                  ),
+                  constraints: const BoxConstraints(minHeight: 40.0),
                   child: Text(
                     "REGISTER",
                     style: TextStyle(
@@ -100,40 +127,45 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         color: AppColors.kwhiteColor),
                   ),
                 ),
-              ),
-              Container(
-                padding: const EdgeInsets.only(top: 10),
-                child: Text("By clicking \"REGISTER\", you agree to HepMap",
-                    style:
-                        kInfoTextStyle.copyWith(color: AppColors.kBlackColor)),
-              ),
-              TextButton(
-                  onPressed: () {},
-                  child: Text("Privacy Policy",
-                      style: kInfoTextStyle.copyWith(
-                          color: AppColors.kBlueColor))),
-              Container(
-                height: 50,
-              ),
-              Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text("Already registered?",
-                        style: kInfoTextStyle.copyWith(
-                            color: AppColors.kBlackColor)),
-                    TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        "Sign in",
-                        style: kInfoTextStyle.copyWith(
-                            color: AppColors.kBlueColor),
+                const SizedBox(height: 10),
+                RichText(
+                  text: TextSpan(
+                      text: 'By clicking "REGISTER", you agree to HepMap ',
+                      style: kTextBoxLabelTextStyle.copyWith(
+                        color: AppColors.kBlackColor,
                       ),
-                    ),
-                  ],
+                      children: [
+                        TextSpan(
+                          text: 'Privacy Policy',
+                          style: kTextBoxLabelTextStyle.copyWith(
+                              color: AppColors.kBlueColor),
+                        ),
+                        const TextSpan(text: '.')
+                      ]),
                 ),
-              ),
-            ],
+                Container(
+                  height: 30,
+                ),
+                Expanded(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Already registered?",
+                          style: kInfoTextStyle.copyWith(
+                              color: AppColors.kBlackColor)),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Sign in",
+                          style: kInfoTextStyle.copyWith(
+                              color: AppColors.kBlueColor),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

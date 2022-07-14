@@ -18,7 +18,7 @@ class _HomeViewState extends State<HomeView> {
   static List<Widget> pages = <Widget>[
     const HomePage(),
     const ReminderView(),
-    Container(),
+    // Container(),
     const ChatView(),
     const CommunityView(),
   ];
@@ -32,9 +32,7 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: pages[_selectedIndex],
-      ),
+      body: pages[_selectedIndex],
       floatingActionButton: FloatingActionButton.small(
         backgroundColor: AppColors.kBlueColor,
         onPressed: () {},
@@ -46,7 +44,6 @@ class _HomeViewState extends State<HomeView> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomNavigationBar(
         onTap: _onItemTapped,
-        selectedFontSize: 12.0,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         currentIndex: _selectedIndex,
