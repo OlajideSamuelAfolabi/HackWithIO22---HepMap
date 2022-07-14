@@ -26,5 +26,4 @@ const kTextBoxLabelTextStyle = TextStyle(
 
 const kInfoTextStyle = TextStyle(
   fontSize: 16,
-  fontWeight: FontWeight.bold,
 );
